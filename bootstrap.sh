@@ -19,6 +19,12 @@ sed -i 's/80/8080/g' /etc/apache2/ports.conf
 sed -i 's/80/8080/g' /etc/apache2/sites-available/000-default.conf
 sed -i 's/None/All/g' /etc/apache2/apache2.conf
 
-for s in proftpd apache2 squid3 ; do
- sudo systemctl restart $s
-done
+{
+echo 'if [[ ! -f .restarted ]] ; then'
+echo ' for s in proftpd apache2 squid3 ; do'
+echo '  echo "Restarting "$s'
+echo '  sudo systemctl restart $s'
+echo ' done'
+echo ' touch .restarted'
+echo 'fi'
+} >> .bashrc
