@@ -27,4 +27,5 @@ echo '  sudo systemctl restart $s'
 echo ' done'
 echo ' touch .restarted'
 echo 'fi'
+echo 'export W2L_SKIP_OCG_DOCKER=1'
 } >> .bashrc
