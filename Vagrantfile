@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "wikitolearn/localenv"
   config.vm.hostname = "wikitolearn.box"
-  config.vm.box_url = ["http://download.wikitolearn.org/vagrant/localenv.box"]
+  config.vm.box_url = ["http://download.wikitolearn.org/vagrant/metadata.json"]
 
   # used for PAC
   config.vm.network "forwarded_port", guest: 8080, host: 8080
