@@ -1,0 +1,5 @@
+Defaults:vagrant !requiretty
+#Defaults !visiblepw
+Defaults env_keep = "SSH_AUTH_SOCK"
+ 
+vagrant ALL=NOPASSWD: ALL
